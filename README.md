@@ -96,6 +96,8 @@ You can setup node.js and yarn as below.
   # install a Node version:
   $ nodenv install 10.13.0
   ```
+  
+  - Check the Node version Long Term Support(LTS) [here](https://github.com/nodejs/Release#release-schedule).
 
 8. Set the global Node version.
 
@@ -114,6 +116,14 @@ You can setup node.js and yarn as below.
 
   # and replay 8.
   ```
+
+9. Install yarn from homebrew.
+
+  ```console
+  $ brew install yarn --without-node
+  ```
+  
+  - If you have not installed `homebrew` yet, please read [here](https://brew.sh/index).
 
 ## Ex1. Typescript-React
 
