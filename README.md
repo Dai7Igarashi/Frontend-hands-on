@@ -63,7 +63,7 @@ You can setup node.js and yarn as below.
 
     2. Reload ~/.bash_profile.
     ```console
-    source ~/.bash_profile
+    $ source ~/.bash_profile
     ```
 
   - If it doesn't suppot `nodenv install`, please install `node-build` as below.
