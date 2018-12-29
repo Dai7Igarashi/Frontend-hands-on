@@ -5,10 +5,24 @@
 
 Refer from [here](https://github.com/Microsoft/TypeScript-React-Starter).
 
+# Quick Start
+
+```console
+// change dir in tutrial-typescript-react-starter
+
+// Install node_modules based on `yarn.lock`
+$ yarn
+
+// Start
+$ yarn start
+```
+
 # Table of Contents
 
 * [STEP1. Setup base](#step1-setup-base)
 * [STEP2. Create Components](#step2-create-components)
+* [STEP3. Unit Test with Jest and Enzyme](#step3-unit-test-with-jest-and-enzyme)
+* [STEP4. State Management with Redux](#step4-state-management-with-redux)
 
 ## STEP1. Setup base
 
@@ -88,4 +102,42 @@ enzyme.configure({ adapter: new Adapter() });
 ```console
 # Add `src/components/Hello.test.tsx`
 $ yarn run test
+```
+
+## STEP4. State Management with Redux
+
+### Install Redux
+
+```console
+$ yarn add redux react-redux
+$ yarn add -D @types/react-redux
+```
+
+### About structure of src
+
+```
+src
+├── actions
+│   └── index.ts  // All actions.
+│
+├── components
+│   ├── App.tsx  // Wrapper components.
+│   ├── Hello.tsx
+│   └── GoodBy.tsx
+│
+│   // Called by ./components/App.tsx.
+│   // Serve state and dispatch to each component.
+├── containers
+│   ├── Hello.tsx
+│   └── GoodBy.tsx
+│
+│   // Select wanted state from RootState.
+├── selectors
+│   └── index.ts
+│
+│   // index: Entry point of rendering.
+├── index.tsx
+│
+│   // state: Integrate all state in a store, called RootState, and all reducers.
+└── state.ts
 ```

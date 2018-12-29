@@ -1,48 +1,49 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-export interface HelloProps {
+export interface GoodByProps {
   name: string;
   /***
    * `?` is Optional Properties.
    * It is not necessary to describe.
   ***/
-  enthusiasmLevel?: number;
+  questionLevel?: number;
   onIncrement?: () => void;
   onDecrement?: () => void;
 }
 
-const Hello = ({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: HelloProps) => {
-  if (enthusiasmLevel <= 0) {
+const GoodBy = ({ name, questionLevel = 1, onIncrement, onDecrement }: GoodByProps) => {
+  if (questionLevel <= 0) {
     throw new Error('You could be a little more enthusiastic :(');
   }
 
   return (
-    <HelloWrapper>
+    <GoodByWrapper>
       <GreetingWrapper>
-        Hello {name + getExclamationMarks(enthusiasmLevel)}
+        GoodBy {name + getExclamationMarks(questionLevel)}
       </GreetingWrapper>
       <ButtonWrapper>
         <Button onClick={onDecrement}>-</Button>
         <Button onClick={onIncrement}>+</Button>
       </ButtonWrapper>
-    </HelloWrapper>
+    </GoodByWrapper>
   );
 }
 
 const getExclamationMarks = (numChars: number) => {
-  return Array(numChars + 1).join('!');
+  return Array(numChars + 1).join('?');
 }
 
-export default Hello;
+export default GoodBy;
 
-const HelloWrapper = styled.div`
+const GoodByWrapper = styled.div`
   text-align: center;
   margin: 20px;
   font-size: 48px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `
 const GreetingWrapper = styled.div``
+
 GreetingWrapper.displayName = "GreetingWrapper";
 
 const ButtonWrapper = styled.div``
