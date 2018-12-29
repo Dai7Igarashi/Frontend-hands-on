@@ -8,12 +8,12 @@ Refer from [here](https://github.com/Microsoft/TypeScript-React-Starter).
 # Quick Start
 
 ```console
-// change dir in tutrial-typescript-react-starter
+# change dir in tutrial-typescript-react-starter
 
-// Install node_modules based on `yarn.lock`
+# Install node_modules based on `yarn.lock`
 $ yarn
 
-// Start
+# Start
 $ yarn start
 ```
 
