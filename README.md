@@ -10,6 +10,8 @@
 * [Ex4. Express](#ex4-express)
 * [Ex5. SPA-SSR](#ex5-spa-ssr)
 * [Ex6. PWA](#ex6-pwa)
+* [Ex7. RxJS](#ex7-rxjs)
+* [Ex8. WebAssembly](#ex8-webassembly)
 * [Option](#option)
   * [webpack](#webpack)
   * [GitHub Flow](#github-flow)
@@ -128,7 +130,7 @@ You can setup node.js and yarn as below.
 
 ## Ex1. Typescript-React
 
-Please Wait :)
+[Get Start](https://github.com/Dai7Igarashi/frontend-hands-on/tree/master/ex1__typescript-react/tutrial-typescript-react-starter)
 
 ## Ex2. Socket.io
 
@@ -147,6 +149,16 @@ Please Wait :)
 Please Wait :)
 
 ## Ex6. PWA
+
+Please Wait :)
+
+## Ex7. RxJS
+
+Please Wait :)
+
+## Ex8. WebAssembly
+
+Please Wait :)
 
 ## Option
 This is optional guide!
