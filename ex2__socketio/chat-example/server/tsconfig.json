@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,  // check implied any type.
+    "target": "es5",  // transpile into es5.
+    "module": "commonjs",
+  },
+  "include": [
+    "src/*.ts",
+    "src/model/*.ts"
+  ]
+}
