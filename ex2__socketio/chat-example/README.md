@@ -20,6 +20,21 @@ $ yarn start
 
 * **Client**
 
+```console
+# change dir in server:
+# Install node_modules based on `yarn.lock`
+$ yarn
+
+# Start with webpack-dev-server:
+$ yarn start
+```
+
+Next, access [localhost:5000](http://localhost:5000) in browser.
+
+Let's open some tabs and do chat!
+
+* **Client**
+
 # Table of Contents
 
 * [STEP1. Create Server](#step1-create-server)
@@ -31,7 +46,33 @@ $ yarn start
 chat-example
 │
 ├── client
-│
+│   ├── public
+│   │   ├── dist
+│   │   │   └── bundle.js  // transpiled and bundled file by webpack.
+│   │   │   /**
+│   │   │   * Entry point of devServer.
+│   │   │   * Static assets(like .html) is called.(written in contentBase)
+│   │   │   */
+│   │   └── index.js  // static file.
+│   │
+│   ├── src
+│   │   ├── components
+│   │   │   ├── App.tsx
+│   │   │   ├── Chat.tsx
+│   │   │   ├── ChatInput.tsx
+│   │   │   └── ChatList.tsx
+│   │   │
+│   │   ├── model
+│   │   │   └── index.ts  // type setting.
+│   │   │
+│   │   ├── websocket
+│   │   │   └── index.ts  // connection setting between sever and client.
+│   │   │
+│   │   └── index.ts  // Rendering entry point.
+│   │
+│   ├── webpack.config.js
+│   ├── package.json
+│   └── tsconfig.json
 │
 └── server
     ├── dist  // compiled src file.
@@ -50,6 +91,7 @@ chat-example
 ```
 
 ## STEP1. Create Server
+
 Server side not need `bundle` or `minify`, we only do compile ts into js by `gulp-typescript`.
 
 ### Create new project
@@ -74,3 +116,20 @@ You should set `"module": "commonjs"`, because may be `Node.js` is not support E
 Please check source code.
 
 ## STEP2. Create Client
+
+Client side is written in React. It is provided from server, so it need `bundle` or `minify` with `webpack`.
+
+### Create new project
+
+```console
+# create package.json:
+$ yarn init -y
+
+# install modules:
+$ yarn add react react-dom socket.io @types/react @types/react-dom @types/socket.io-client styled-components @types/styled-components
+$ yarn add -D typescript ts-loader source-map-loader webpack webpack-cli webpack-dev-server
+```
+
+### Create each file
+
+Details are written in each file.

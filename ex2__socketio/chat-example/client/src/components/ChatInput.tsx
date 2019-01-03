@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styled from 'styled-components';
 
 interface ChatInputState {
   chatMessage: string;
@@ -35,22 +36,26 @@ class ChatInput extends React.Component<ChatInputProps, ChatInputState> {
     const { chatMessage } = this.state;
 
     return (
-      <div>
-        <textarea
-          rows={10}
-          cols={60}
-          value={chatMessage}
-          onChange={e => this.handleOnChange(e)}
-          onKeyPress={ev => {
-            if (ev.key === "Enter") {
-              ev.preventDefault();
-              this.onEnter();
-            }
-          }}
-        ></textarea>
-      </div>
+      <TextArea
+        value={chatMessage}
+        onChange={e => this.handleOnChange(e)}
+        onKeyPress={ev => {
+          if (ev.key === "Enter") {
+            ev.preventDefault();
+            this.onEnter();
+          }
+        }}
+      />
     );
   }
 }
 
 export default ChatInput;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  height: 140px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+`;

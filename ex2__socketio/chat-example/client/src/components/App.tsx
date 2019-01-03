@@ -48,10 +48,7 @@ class App extends React.Component<any, AppState> {
       <React.Fragment>
         {!user && this.viewPrompt()}
         {user && 
-          <div>
-            <p>Hello {user.name}</p>
-            <Chat user={user} />
-          </div>
+          <Chat user={user} />
         }
       </React.Fragment>
     );

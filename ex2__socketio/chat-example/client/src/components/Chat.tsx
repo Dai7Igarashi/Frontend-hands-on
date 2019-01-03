@@ -2,6 +2,7 @@ import * as React from 'react';
 import { User, Message, Actions, NewMessage } from "../model";
 import WebSocket from '../websocket';
 
+import ChatList from './ChatList';
 import ChatInput from './ChatInput';
 
 // Props send from App.
@@ -39,7 +40,7 @@ class Chat extends React.Component<chatProps, chatState> {
        * spred syntax instead of:
        * const copy = Object.assign([], oldMessages, msg)
        */
-      const addMessage = [...oldMessages, msg]
+      const addMessage = [...oldMessages, msg];
       this.setState({ messages: addMessage });
       this.scrollToBottom();
     });
@@ -47,7 +48,7 @@ class Chat extends React.Component<chatProps, chatState> {
     this.sendNotification(null, Actions.JOINED);
   }
 
-  private scrollToBottom(): void {
+  private scrollToBottom() {
     if (!this.listElementOvserver) {
       return;
     }
@@ -56,8 +57,8 @@ class Chat extends React.Component<chatProps, chatState> {
     if (!parent) {
       return;
     }
-
-    parent.scrollTop = parent.scrollHeight;
+    window.scrollTo(0, parent.scrollHeight);
+    // parent.scrollTop = parent.scrollHeight;
   }
 
   private sendNotification(params: any, action: Actions): void {
@@ -103,12 +104,17 @@ class Chat extends React.Component<chatProps, chatState> {
   render() {
     const { user } = this.props;
     const { messages } = this.state;
+
     return (
-      <div>
-        <ChatInput
-          handleSendMessage={msg => this.handleSendMessage(msg)}
+      <React.Fragment>
+        <ChatList
+          messages={messages}
+          user={user}
+          /* About listRef. https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate  */
+          listRef={e => (this.listElementOvserver = e)}
         />
-      </div>
+        <ChatInput handleSendMessage={msg => this.handleSendMessage(msg)} />
+      </React.Fragment>
     );
   }
 
