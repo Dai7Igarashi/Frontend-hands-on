@@ -134,7 +134,7 @@ You can setup node.js and yarn as below.
 
 ## Ex2. Socket.io
 
-Please Wait :)
+[Get Start](https://github.com/Dai7Igarashi/frontend-hands-on/tree/master/ex2__socketio/chat-example)
 
 ## Ex3. React-Redux
 
@@ -169,4 +169,4 @@ Please Wait :)
 
 ### GitHub Flow
 
-Please Wait :)
+[Here](https://github.com/Dai7Igarashi/frontend-hands-on/tree/master/option/github_flow)
