@@ -38,7 +38,13 @@ $ yarn global add create-react-app
 $ create-react-app tutrial-typescript-react-starter --scripts-version=react-scripts-ts
 
 # eject:
+$ git add .
+$ git commit -m "temporal commit"
 $ yarn run eject
+$ git log --oneline /* Check the commit_number of just before "temporal commit" */
+$ git reset --soft commit_number
+$ git status /* $ git add . , if needed. */
+$ git commit -m "First commit"
 
 # Reinstall node_modules:
 $ rm -rf node_modules
