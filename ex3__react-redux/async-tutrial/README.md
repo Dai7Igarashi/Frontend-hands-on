@@ -24,3 +24,31 @@ $ yarn start
 * [STEP3. Unit Test with Jest and Enzyme with Travis CI ](#step3-unit-test-with-jest-and-enzyme-with-travis-ci)
 
 ## STEP1. Setup base
+
+### Create new project
+
+```console
+$ create-react-app tutrial-typescript-react-starter --scripts-version=react-scripts-ts
+
+// eject:
+$ git add .
+$ git commit -m "temporal commit"
+$ yarn run eject
+$ git log --oneline /* Check the commit_number of just before "temporal commit" */
+$ git reset --soft commit_number
+$ git status /* $ git add . , if needed. */
+
+// install modules:
+$ yarn add redux react-redux redux-logger redux-thunk
+$ yarn add -D @types/react-redux @types/redux-logger @types/redux-thunk
+
+$ yarn add styled-components
+$ yarn add -D typescript-styled-plugin @types/styled-components
+
+$ yarn add -D enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16 react-test-renderer
+
+$ git commit -m "First commit"
+```
+
+## STEP2. Write Codes
+
