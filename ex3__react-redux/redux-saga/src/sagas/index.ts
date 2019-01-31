@@ -17,6 +17,7 @@ export const fetchPostsApi = (reddit: TYPE_OF_REDDIT): Promise<any> => {
   return fetch(`https://www.reddit.com/r/${reddit}.json`)
           .then((resp: any) => resp.json())
           .then((json: any) => json.data.children.map((child: any) => child.data))
+          .catch(error => [])
 }
 
 export const fetchPosts = function* (reddit: TYPE_OF_REDDIT) {

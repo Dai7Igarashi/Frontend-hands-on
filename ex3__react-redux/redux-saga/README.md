@@ -20,8 +20,6 @@ $ yarn start
 
 * [STEP1. Setup base](#step1-setup-base)
 * [STEP2. Create Components](#step2-create-components)
-* [STEP3. Unit Test with Jest and Enzyme](#step3-unit-test-with-jest-and-enzyme)
-* [STEP4. State Management with Redux](#step4-state-management-with-redux)
 
 ## STEP1. Setup base
 
@@ -46,3 +44,24 @@ $ yarn add -D enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter
 
 $ git commit -m "First commit"
 ```
+
+## STEP2. Create Components
+
+All comments are written in each file.
+So please check them :)
+
+### 1. Create Store
+
+You should think about what state to hold in store.
+
+### 2. Create Actions
+
+Write ActionCreater.
+
+### 3. Create Reducers
+
+### 4. Create Sagas
+
+### 5. Create Components
+
+### 6. Create Containers
