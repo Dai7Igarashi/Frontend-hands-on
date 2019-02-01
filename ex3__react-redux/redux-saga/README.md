@@ -40,8 +40,6 @@ $ git status /* $ git add . , if needed. */
 $ yarn add redux react-redux redux-saga isomorphic-fetch
 $ yarn add -D @types/react-redux @redux-saga/is @types/isomorphic-fetch
 
-$ yarn add -D enzyme @types/enzyme enzyme-adapter-react-16 @types/enzyme-adapter-react-16 react-test-renderer
-
 $ git commit -m "First commit"
 ```
 
