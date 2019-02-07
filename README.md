@@ -8,13 +8,16 @@
 * [Ex2. Socket.io](#ex2-socketio)
 * [Ex3. React-Redux](#ex3-react-redux)
 * [Ex4. Express](#ex4-express)
-* [Ex5. SPA-SSR](#ex5-spa-ssr)
+* [Ex5. SPA-SSR-BFF](#ex5-spa-ssr-bff)
 * [Ex6. PWA](#ex6-pwa)
 * [Ex7. RxJS](#ex7-rxjs)
 * [Ex8. WebAssembly](#ex8-webassembly)
+* [Ex9. ReactNative-ReactPrimitives](#ex9-reactnative-reactprimitives)
+* [Ex10. Vuejs](#ex10-vuejs)
 * [Option](#option)
   * [webpack](#webpack)
   * [GitHub Flow](#github-flow)
+  * [Page Speed](#page-speed)
 
 ## Support
 
@@ -138,13 +141,13 @@ You can setup node.js and yarn as below.
 
 ## Ex3. React-Redux
 
-Please Wait :)
+[Get Start](https://github.com/Dai7Igarashi/frontend-hands-on/tree/master/ex3__react-redux/redux-saga)
 
 ## Ex4. Express
 
 Please Wait :)
 
-## Ex5. SPA-SSR
+## Ex5. SPA-SSR-BFF
 
 Please Wait :)
 
@@ -160,6 +163,14 @@ Please Wait :)
 
 Please Wait :)
 
+## Ex9. ReactNative-ReactPrimitives
+
+Please Wait :)
+
+## Ex10. Vuejs
+
+Please Wait :)
+
 ## Option
 This is optional guide!
 
@@ -170,3 +181,7 @@ Please Wait :)
 ### GitHub Flow
 
 [Here](https://github.com/Dai7Igarashi/frontend-hands-on/tree/master/option/github_flow)
+
+### Page Speed
+
+Please Wait :)
