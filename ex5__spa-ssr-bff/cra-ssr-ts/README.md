@@ -8,12 +8,12 @@ Refer from [here](https://github.com/cereallarceny/cra-ssr).
 # Quick Start
 
 ```console
-# change dir in cra-ssr-ts
+// change dir in cra-ssr-ts
 
-# Install node_modules based on `yarn.lock`
+// Install node_modules based on `yarn.lock`
 $ yarn
 
-# Start
+// Start
 $ yarn start
 ```
 
@@ -36,7 +36,7 @@ $ yarn global upgrade create-react-app
 
 ### Create new project
 
-`react-scripts-ts` is now **[DEPRECATED]**(https://github.com/wmonk/create-react-app-typescript/)!  
+`react-scripts-ts` is now **[DEPRECATED](https://github.com/wmonk/create-react-app-typescript/)**!  
 `create-react-app` now supports typescript [natively](https://facebook.github.io/create-react-app/docs/adding-typescript).
 
 ```console
