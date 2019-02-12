@@ -63,7 +63,14 @@ $ git commit -m "Act create-react-app and Add REAME.md"
 ### Add aditional node_modules
 
 ```console
+$ yarn add react-redux redux redux-thunk react-router-dom connected-react-router
+$ yarn add -D @types/react-redux @types/react-router-dom
 
+$ yarn add styled-components
+$ yarn add -D typescript-styled-plugin @types/styled-components
+
+$ yarn add -D tslint
+$ node_modules/tslint/bin/tslint --init
 ```
 
 ## STEP2. Create Components
