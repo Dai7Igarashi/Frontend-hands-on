@@ -81,7 +81,9 @@ const fetchResources1 = async () => {
   } catch (error) {
     console.log(error);
     console.log(error.message);
+    console.log("Commit in 2");
     console.log("Commit in 1");
+    console.log("Commit in 2");
   }
   return results;
 };
