@@ -18,26 +18,30 @@ function dummyFetch(path) {
         reject_func(new Error("Not Found"));
       }
     }, 1000 * Math.random());
-  })
+  });
 }
 
 dummyFetch("/success/data")
-/**
- * After `then` method, you can set the two types of callback functions.
- */
-.then(
   /**
-   * resolve_func = onFulfilled
-   * Promise returns the function `resolve` which args is `response`. 
+   * After `then` method, you can set the two types of callback functions.
    */
-  function onFulfilled(response) {
-    console.log(response);
-  },
-  function onRejected(error) {
-    console.log(error);
-    console.log("Hoge Hoge");
-  }
-);
+  .then(
+    /**
+     * resolve_func = onFulfilled
+     * Promise returns the function `resolve` which args is `response`.
+     */
+    function onFulfilled(response) {
+      console.log(response);
+    },
+    function onRejected(error) {
+      console.log(error);
+      console.log("Hoge Hoge");
+      console.log("Commit in 1");
+      console.log("Commit in 1");
+      console.log("Commit in 2");
+      console.log("Commit in 1");
+    }
+  );
 
 /* 2-1. Only Fulfilled Pattern */
 
@@ -50,12 +54,12 @@ function delay(timeoutMs) {
 }
 
 (function testDelay() {
-  console.log("1. Start Promise")
+  console.log("1. Start Promise");
   delay(1000).then(function resolve_fulfilled(response) {
     console.log("3. After 1000Ms !");
   });
   console.log("2. delay function is actiong on Async Process...");
-}());
+})();
 
 /* 2-2. Using Arror Function */
 
@@ -65,10 +69,10 @@ const delay = timeoutMs => {
       resolve();
     }, timeoutMs);
   });
-}
+};
 
 (() => {
-  console.log("1. Start Promise")
+  console.log("1. Start Promise");
   delay(1000).then(function resolve_fulfilled(response) {
     console.log("3. After 1000Ms !");
   });
@@ -81,19 +85,17 @@ const errorPromise = message => {
   return new Promise((resolve, reject) => {
     reject(new Error(message));
   });
-}
+};
 
 /* 3-1. Using `then` */
 
-errorPromise("error handling with then")
-.then(undefined, (error) => {
+errorPromise("error handling with then").then(undefined, error => {
   console.log(error.message);
 });
 
 /* 3-2. Using `catch` */
 
-errorPromise("error handling with catch")
-.catch(error => {
+errorPromise("error handling with catch").catch(error => {
   console.log(error.message);
 });
 
@@ -111,38 +113,40 @@ const dummyFetch = path => {
       }
     }, 1000 * Math.random());
   });
-}
+};
 
 const results = [];
 
 dummyFetch("/resource/A")
-/**
- * dummyFetch returns function, resolve or reject, which has args,
- * like (args) => {}.
- */
-.then(response => {
-  results.push(response.body);
   /**
-   * If returns Promise Object, you can get next status by using `then` or `catch`.
+   * dummyFetch returns function, resolve or reject, which has args,
+   * like (args) => {}.
    */
-  return dummyFetch("/resource/B");
-})
-.then(resp => {
-  results.push(resp.body);
-  /**
-   * If not returns Promise Object, then you get function which has no args anytime,
-   * except resolve and reject callback functions.
-   */
-})
-.then(() => {
-  console.log(results);
-})
-.then(() => {
-  console.log("Hello World");
-})
-.catch((error_object) => {
-  /**
-   * If an Error Object returns error, then catch here.
-   */
-  console.log(error_object);
-});
+  .then(response => {
+    results.push(response.body);
+    /**
+     * If returns Promise Object, you can get next status by using `then` or `catch`.
+     */
+    return dummyFetch("/resource/B");
+  })
+  .then(resp => {
+    results.push(resp.body);
+    /**
+     * If not returns Promise Object, then you get function which has no args anytime,
+     * except resolve and reject callback functions.
+     */
+  })
+  .then(() => {
+    console.log(results);
+  })
+  .then(() => {
+    console.log("Hello World");
+    console.log("Commit in 2");
+    console.log("Commit in 1");
+  })
+  .catch(error_object => {
+    /**
+     * If an Error Object returns error, then catch here.
+     */
+    console.log(error_object);
+  });
