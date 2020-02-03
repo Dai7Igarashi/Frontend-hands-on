@@ -8,7 +8,7 @@ const doAsync = path => {
       reject(new Error());
     }
   });
-}
+};
 
 // All of these are same meaning.
 // 1. STEP1:
@@ -27,12 +27,11 @@ doAsync_resolve.then(response => {
   console.log(response);
 });
 
-
 /* 2. Basic Async Function */
 
 const doAsync = () => {
   return Promise.resolve({ body: "success" });
-}
+};
 doAsync().then(response => {
   console.log(response);
 });
@@ -43,9 +42,9 @@ async function doAsync() {
   return { body: "success" };
 }
 // or
-const doAsync = async() => {
+const doAsync = async () => {
   return { body: "success" };
-}
+};
 
 doAsync().then(response => {
   console.log(response);
@@ -63,10 +62,10 @@ const dummyFetch = path => {
       }
     }, 1000 * Math.random());
   });
-}
+};
 
 // 3-1. Use case 1.
-const fetchResources1 = async() => {
+const fetchResources1 = async () => {
   const results = [];
   try {
     const responseA = await dummyFetch("/resource/A");
@@ -78,40 +77,46 @@ const fetchResources1 = async() => {
     // D won't be called.
     const responseD = await dummyFetch("/resource/D");
     results.push(responseD.body);
-  } catch(error) {
+  } catch (error) {
     console.log(error);
     console.log(error.message);
   }
   return results;
-}
+};
 
-fetchResources1()
-.then(resp => {
+fetchResources1().then(resp => {
   console.log(resp);
 });
 
 // 3-2. Use case 2.
-const fetchResources2 = async() => {
+const fetchResources2 = async () => {
   const results = [];
 
   await dummyFetch("/resource/A")
-  .then(resp => {results.push(resp.body)})
-  .catch(error => error.message);
+    .then(resp => {
+      results.push(resp.body);
+    })
+    .catch(error => error.message);
   await dummyFetch("/resource/B")
-  .then(resp => {results.push(resp.body)})
-  .catch(error => error.message);
+    .then(resp => {
+      results.push(resp.body);
+    })
+    .catch(error => error.message);
   await dummyFetch("/faital/C")
-  .then(resp => {results.push(resp.body)})
-  .catch(error => console.log(error.message));
+    .then(resp => {
+      results.push(resp.body);
+    })
+    .catch(error => console.log(error.message));
   // D will be called.
   await dummyFetch("/resource/D")
-  .then(resp => {results.push(resp.body)})
-  .catch(error => error.message);
+    .then(resp => {
+      results.push(resp.body);
+    })
+    .catch(error => error.message);
 
   return results;
-}
+};
 
-fetchResources2()
-.then(resp => {
+fetchResources2().then(resp => {
   console.log(resp);
 });
