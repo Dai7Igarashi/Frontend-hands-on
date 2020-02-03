@@ -14,6 +14,7 @@ const doAsync = path => {
 // 1. STEP1:
 doAsync("/success").then(function resolve(response) {
   console.log(response);
+  console.log("Commit in 1");
 });
 
 // 1. STEP2:
@@ -80,6 +81,7 @@ const fetchResources1 = async () => {
   } catch (error) {
     console.log(error);
     console.log(error.message);
+    console.log("Commit in 1");
   }
   return results;
 };
@@ -119,4 +121,5 @@ const fetchResources2 = async () => {
 
 fetchResources2().then(resp => {
   console.log(resp);
+  console.log("Commit in 1");
 });

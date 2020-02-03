@@ -36,6 +36,9 @@ dummyFetch("/success/data")
     function onRejected(error) {
       console.log(error);
       console.log("Hoge Hoge");
+      console.log("Commit in 1");
+      console.log("Commit in 1");
+      console.log("Commit in 1");
     }
   );
 
@@ -137,6 +140,7 @@ dummyFetch("/resource/A")
   })
   .then(() => {
     console.log("Hello World");
+    console.log("Commit in 1");
   })
   .catch(error_object => {
     /**
